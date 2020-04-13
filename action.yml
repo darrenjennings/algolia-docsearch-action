@@ -1,0 +1,20 @@
+# action.yml
+name: 'Algolia Docsearch Indexer'
+description: 'Update an Algolia Docsearch index'
+inputs:
+  algolia_application_id:
+  description: 'Aloglia docsearch APPLICATION_ID'
+    required: true
+  algolia_api_key:
+    description: 'Aloglia docsearch API_KEY'
+    required: true
+  file:
+    description: 'File path to docsearch'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.algolia_application_id }}
+    - ${{ inputs.algolia_api_key }}
+    - ${{ inputs.file }}
