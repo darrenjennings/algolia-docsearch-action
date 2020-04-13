@@ -2,5 +2,18 @@
 
 APPLICATION_ID=$1
 API_KEY=$2
+FILE=$3
 
-docker run -it -e APPLICATION_ID=$APPLICATION_ID -e API_KEY=$API_KEY -e "CONFIG=$(cat ./config.json | jq -r tostring)" algolia/docsearch-scraper
+apt update
+apt install jq -y
+
+# install docker
+apt install apt-transport-https ca-certificates curl software-properties-common -y
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+apt update
+apt-cache policy docker-ce
+apt install docker-ce -y
+
+cat /workspace/$FILE | jq -r tostring
+docker run -e APPLICATION_ID=$APPLICATION_ID -e API_KEY=$API_KEY -e "CONFIG=$(cat /workspace/$FILE | jq -r tostring)" algolia/docsearch-scraper

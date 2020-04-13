@@ -1,6 +1,6 @@
-FROM algolia/docsearch-scraper
+FROM ubuntu:latest
 
 COPY entrypoint.sh /entrypoint.sh
-COPY $3 /config.json
+COPY . /workspace
 
 ENTRYPOINT ["/entrypoint.sh"]
