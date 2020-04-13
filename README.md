@@ -13,7 +13,7 @@ This action runs the docsearch scraper and updates an index.
 ## Example usage
 
 ```yaml
-uses: actions/darrenjennings/algolia-docsearch-action@master
+uses: darrenjennings/algolia-docsearch-action@master
 with:
   algolia_application_id: 'XXXXX83LWT'
   algolia_api_key: 'xxxxxxxxxxxxxxxxxxxx42935deb8d9d'
