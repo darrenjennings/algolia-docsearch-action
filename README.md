@@ -17,5 +17,5 @@ uses: darrenjennings/algolia-docsearch-action@master
 with:
   algolia_application_id: 'XXXXX83LWT'
   algolia_api_key: 'xxxxxxxxxxxxxxxxxxxx42935deb8d9d'
-  file: '/github/workspace/algolia/my-algolia-config.json'
+  file: 'algolia/my-algolia-config.json'
 ```
