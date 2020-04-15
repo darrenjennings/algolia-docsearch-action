@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
 COPY entrypoint.sh /entrypoint.sh
-COPY . /workspace
+COPY ${{ github.workspace }} /workspace
 
 ENTRYPOINT ["/entrypoint.sh"]
