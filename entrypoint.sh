@@ -15,5 +15,6 @@ apt update
 apt-cache policy docker-ce
 apt install docker-ce -y
 
+ls -la /workspace
 cat /workspace/$FILE | jq -r tostring
 docker run -e APPLICATION_ID=$APPLICATION_ID -e API_KEY=$API_KEY -e "CONFIG=$(cat /workspace/$FILE | jq -r tostring)" algolia/docsearch-scraper
