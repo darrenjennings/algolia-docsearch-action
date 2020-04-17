@@ -5,10 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     name: test the action
     steps:
+      - uses: actions/checkout@master
       - name: test
         uses: darrenjennings/algolia-docsearch-action@master
         with:
           algolia_api_key: ${{ secrets.ALGOLIA_API_KEY }}
           algolia_application_id: ${{ secrets.ALGOLIA_APPLICATION_ID }}
-          file: "config.example.json"
-    
+          # needs to be inside $GITHUB_WORKSPACE from actions/checkout step
+          file: config.example.json
