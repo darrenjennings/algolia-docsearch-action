@@ -1,5 +1,7 @@
 name: 'Algolia Docsearch Indexer'
 description: 'Update an Algolia Docsearch index'
+icon: 'book'
+color: 'blue'
 inputs:
   algolia_application_id:
     description: 'Aloglia docsearch APPLICATION_ID'
