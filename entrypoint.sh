@@ -4,17 +4,23 @@ APPLICATION_ID=$1
 API_KEY=$2
 FILE=$3
 
-apt update
-apt install jq -y
+# build from the main source repository
+git clone https://github.com/algolia/docsearch-scraper.git
 
-# install docker
-apt install apt-transport-https ca-certificates curl software-properties-common -y
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
-add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
-apt update
-apt-cache policy docker-ce
-apt install docker-ce -y
+cd docsearch-scraper/
 
-ls -la $GITHUB_WORKSPACE
-cat $GITHUB_WORKSPACE/$FILE | jq -r tostring
-docker run -e APPLICATION_ID=$APPLICATION_ID -e API_KEY=$API_KEY -e "CONFIG=$(cat $GITHUB_WORKSPACE/$FILE | jq -r tostring)" algolia/docsearch-scraper
+# install pipenv without cache
+pip install --no-cache-dir --trusted-host pypi.python.org pipenv
+
+# install packages without virtualenv
+pipenv install --system --deploy --ignore-pipfile
+
+# create the .env file for docsearch
+echo "APPLICATION_ID=${APPLICATION_ID}
+API_KEY=${API_KEY}
+" > .env
+
+# run algolia docsearch
+python docsearch run $GITHUB_WORKSPACE/$FILE
+
+echo "🚀 Successfully indexed and uploaded the results to Algolia"
