@@ -19,8 +19,14 @@ FILE=$3
 
 # ---- NEED TO REPLACE WITH CUSTOM ACTION
 
-ls -la $GITHUB_WORKSPACE
-cat $GITHUB_WORKSPACE/$FILE | jq -r tostring
+echo "the files are "
+ls -a
+# cat $GITHUB_WORKSPACE/$FILE | jq -r tostring
+
+echo "=========
+and using tree command"
+
+tree .
 
 echo "reached something!"
 
