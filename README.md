@@ -16,7 +16,7 @@ This action runs the docsearch scraper and updates an index.
 ## Example usage
 
 ```yaml
-- uses: actions/checkout@master
+- uses: actions/checkout@v2
 - uses: darrenjennings/algolia-docsearch-action@master
   with:
     algolia_application_id: 'XXXXX83LWT'

@@ -5,10 +5,10 @@ branding:
   color: 'blue'
 inputs:
   algolia_application_id:
-    description: 'Aloglia docsearch APPLICATION_ID'
+    description: 'Algolia docsearch APPLICATION_ID'
     required: true
   algolia_api_key:
-    description: 'Aloglia docsearch API_KEY'
+    description: 'Algolia docsearch API_KEY'
     required: true
   file:
     description: 'File path to docsearch'
