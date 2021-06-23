@@ -10,6 +10,10 @@ echo "APPLICATION_ID=${APPLICATION_ID}
 API_KEY=${API_KEY}
 " > .env
 
+ls -a
+
+echo "above were the present"
+
 ls -a $GITHUB_WORKSPACE
 
 pipenv shell
