@@ -2,6 +2,7 @@ name: Test the Action
 
 on:
   - push
+  - pull_request
 
 
 jobs:
@@ -13,7 +14,7 @@ jobs:
         with:
           persist-credentials: false
       - name: test
-        uses: darrenjennings/algolia-docsearch-action@master
+        uses: ./
         with:
           algolia_api_key: ${{ secrets.ALGOLIA_API_KEY }}
           algolia_application_id: ${{ secrets.ALGOLIA_APPLICATION_ID }}
