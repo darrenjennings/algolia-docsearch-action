@@ -4,11 +4,13 @@ APPLICATION_ID=$1
 API_KEY=$2
 FILE=$3
 
-echo "\n the dirs are \n"
-
-ls -a
+git clone https://github.com/algolia/docsearch-scraper.git
 
 cd docsearch-scraper/
+
+pip install pipenv
+
+pipenv install --system --ignore-pipfile
 
 echo "APPLICATION_ID=${APPLICATION_ID}
 API_KEY=${API_KEY}
