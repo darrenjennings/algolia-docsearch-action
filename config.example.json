@@ -1,41 +1,20 @@
 {
-  "index_name": "prod_EE",
+  "index_name": "CovidSusTrackerDocs",
   "start_urls": [
-    {
-      "url": "https://docs.konghq.com/enterprise/(?P<version>.*?)/",
-      "variables": {
-        "version": {
-          "url": "https://docs.konghq.com/enterprise/",
-          "js": "var versions = $('ul[aria-labelledby=version-dropdown] a, button#version-dropdown').map(function(i, e) { return $(e).text().replace(/\\s+/g, '').replace(/Version/g, '').replace('(2020)', '').replace('(latest)', ''); }).toArray(); return JSON.stringify(versions);"
-        }
-      }
-    }
+    "https://aquaimpact.github.io/CovidSusTrackerDocs"
   ],
-  "sitemap_urls": [
-    "https://docs.konghq.com/sitemap.xml"
-  ],
-  "stop_urls": [
-
-  ],
+  "stop_urls": [],
   "selectors": {
-    "lvl0": {
-      "selector": ".docs-navigation > a.active",
-      "global": true,
-      "default_value": "Kong"
-    },
-    "lvl1": ".content h1",
-    "lvl2": ".content h2",
-    "lvl3": ".content h3",
-    "lvl4": ".content h4",
-    "text": ".content p, .content li"
+    "lvl0": ".doc-content h1",
+    "lvl1": ".doc-content h2",
+    "lvl2": ".doc-content h3",
+    "lvl3": ".doc-content h4",
+    "lvl4": ".doc-content h5",
+    "lvl5": ".doc-content h6",
+    "text": ".doc-content p, .doc-content li"
   },
-  "selectors_exclude": [
-    "#next-steps",
-    "#next-steps ~ p"
-  ],
-  "only_content_level": true,
   "conversation_id": [
-    "534091583"
+    "1313246279"
   ],
-  "nb_hits": 18645
+  "nb_hits": 98
 }
