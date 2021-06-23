@@ -16,6 +16,4 @@ echo "APPLICATION_ID=${APPLICATION_ID}
 API_KEY=${API_KEY}
 " > .env
 
-ls -a $GITHUB_WORKSPACE
-
-python docsearch run $GITHUB_WORKSPACE/config.example.json
+python docsearch run $GITHUB_WORKSPACE/$FILE
