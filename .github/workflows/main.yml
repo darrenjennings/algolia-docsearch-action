@@ -1,4 +1,5 @@
-on: [push]
+on:
+  - push
 
 jobs:
   example_job:
@@ -7,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: test
-        uses: darrenjennings/algolia-docsearch-action@master
+        uses: aditya-mitra/algolia-docsearch-action@master
         with:
           algolia_api_key: ${{ secrets.ALGOLIA_API_KEY }}
           algolia_application_id: ${{ secrets.ALGOLIA_APPLICATION_ID }}
