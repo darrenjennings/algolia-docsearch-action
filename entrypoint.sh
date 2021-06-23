@@ -4,30 +4,13 @@ APPLICATION_ID=$1
 API_KEY=$2
 FILE=$3
 
-# apt update
-# apt install jq -y
+cd docsearch-scraper/
 
-# --- THE MAIN PROBLEM LIES HERE
+echo "APPLICATION_ID=${APPLICATION_ID}
+API_KEY=${API_KEY}
+" > .env
 
-# install docker
-# apt install apt-transport-https ca-certificates curl software-properties-common -y
-# curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
-# add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
-# apt update
-# apt-cache policy docker-ce
-# apt install docker-ce -y
+ls -a $GITHUB_WORKSPACE
 
-# ---- NEED TO REPLACE WITH CUSTOM ACTION
-
-echo "the files are "
-ls -a
-# cat $GITHUB_WORKSPACE/$FILE | jq -r tostring
-
-echo "=========
-and using tree command"
-
-tree .
-
-echo "reached something!"
-
-# docker run -e APPLICATION_ID=$APPLICATION_ID -e API_KEY=$API_KEY -e "CONFIG=$(cat $GITHUB_WORKSPACE/$FILE | jq -r tostring)" algolia/docsearch-scraper
+pipenv shell
+./docsearch run $GITHUB_WORKSPACE/config.example.json

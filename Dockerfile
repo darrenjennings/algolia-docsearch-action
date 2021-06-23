@@ -1,10 +1,12 @@
-FROM algolia/docsearch-scraper
+FROM python:3.6
 
-RUN apt update && apt install jq -y
+RUN git clone https://github.com/algolia/docsearch-scraper.git
 
-WORKDIR /algolia-docsearch-action
+WORKDIR /docsearch-scraper
 
-COPY config.example.json /config.example.json
+RUN pip install pipenv
+
+RUN pipenv install --system --ignore-pipfile
 
 COPY entrypoint.sh /entrypoint.sh
 
