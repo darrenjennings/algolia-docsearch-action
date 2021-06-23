@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: test
-        uses: aditya-mitra/algolia-docsearch-action@master
+        uses: aditya-mitra/algolia-docsearch-action@improve/actions
         with:
           algolia_api_key: ${{ secrets.ALGOLIA_API_KEY }}
           algolia_application_id: ${{ secrets.ALGOLIA_APPLICATION_ID }}
