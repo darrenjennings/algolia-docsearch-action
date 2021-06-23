@@ -5,14 +5,13 @@ This action runs the docsearch scraper and updates an index.
 ## Inputs
 
 ### `algolia_application_id`
-**Required** 'Aloglia docsearch `APPLICATION_ID`
+**Required** Algolia docsearch `APPLICATION_ID`
 
 ### `algolia_api_key`
-**Required** Aloglia docsearch `API_KEY`
+**Required** Algolia docsearch `API_KEY`
 
 ### `file`
-**Required** File able to be accessed from $GITHUB_WORKSPACE, used in tandem
-with `actions/checkout@master`
+**Required** File able to be accessed from $GITHUB_WORKSPACE, used in tandem with `actions/checkout@master`
 
 ## Example usage
 
