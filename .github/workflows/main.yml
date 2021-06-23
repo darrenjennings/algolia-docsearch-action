@@ -2,8 +2,6 @@ name: Test the Action
 
 on:
   - push
-  - pull_request
-
 
 jobs:
   example_job:
@@ -11,8 +9,6 @@ jobs:
     name: test the action
     steps:
       - uses: actions/checkout@v2
-        with:
-          persist-credentials: false
       - name: test
         uses: ./
         with:
